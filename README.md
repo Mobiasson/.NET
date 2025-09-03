@@ -4,7 +4,7 @@ Welcome to my .NET learning repository! This space is dedicated to my studies in
 
 ## Tech Stack
 
-- **IDE**: Helix Text Editor **Plugins**: ripgrep, fzf, csharl-l
+- **IDE**: Helix Text Editor **Plugins**: ripgrep, fzf, csharp-l
 - **Shell**: PowerShell
 - **Terminal**: Windows Terminal
 - **Browser**: QuteBrowser
