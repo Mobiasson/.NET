@@ -1,2 +1,10 @@
-## obj directory is generated through dotnet new console
+## obj director is generated through dotnet new console
 obj/
+
+## .csproj and .sln
+Projects/*/*.csproj
+Projects/*/*.sln
+Assignments/*/*.csproj
+Assignments/*/*.sln
+Exercises/*/*.csproj
+Exercises/*/*.sln
