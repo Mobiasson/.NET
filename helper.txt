@@ -1,0 +1,15 @@
+-- Generate new projects and adds to CppProjects.sln
+
+Set-Location -Path C:\users\mikae\CppProjects\Projects
+New-Item -ItemType Directory -Name MyNewProject
+Set-Location -Path MyNewProject
+dotnet new console
+dotnet new sln
+dotnet sln MyNewProject.sln add MyNewProject.csproj
+dotnet sln ..\..\CppProjects.sln add MyNewProject.csproj
+
+-- Generate in existing directory
+dotnet new console
+dotnet new sln
+dotnet sln MyNewProject.sln add MyNewProject.csproj
+dotnet sln ..\..\CppProjects.sln add MyNewProject.csproj
