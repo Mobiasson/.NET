@@ -1,0 +1,2 @@
+## obj directory is generated through dotnet new console
+obj/

@@ -1,2 +1,30 @@
-# .NET
-This is my school repository that I'm going to use throughout me studying .NET. Everything from exercises, assignments and projects.
+# .NET School Repository
+
+Welcome to my .NET learning repository! This space is dedicated to my studies in .NET, containing exercises, assignments, and projects completed during my coursework.
+
+## Tech Stack
+
+- **IDE**: Helix Text Editor
+- **Shell**: PowerShell
+- **Terminal**: Windows Terminal
+- **Browser**: QuteBrowser
+
+## Repository Structure
+
+The root directory (`CppProjects`) contains the following key files:
+
+- `global.json`: Specifies the .NET SDK version for all projects.
+- `CppProjects.sln`: Solution file grouping all projects in the repository.
+- `CMakeLists.txt`: Configuration file for CMake builds (if applicable).
+
+### Subdirectories
+
+- **Assignments**: Coursework assignments.
+- **Exercises**: Practice exercises for learning .NET concepts.
+- **Projects**: Larger-scale projects, including individual .NET applications.
+
+
+## Random
+
+- I will not be using any AI tools or assistants to generate any code throughout my whole course.
+- AI will only be used for syntax or fast searching.
