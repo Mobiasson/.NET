@@ -1,5 +1,8 @@
-## obj director is generated through dotnet new console
+## obj directory is generated through dotnet new console
 obj/
+
+## bin/ directory is generated through dotnet new console
+bin/
 
 ## .csproj and .sln
 Projects/*/*.csproj
