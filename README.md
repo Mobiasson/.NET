@@ -4,7 +4,7 @@ Welcome to my .NET learning repository! This space is dedicated to my studies in
 
 ## Tech Stack
 
-- **IDE**: Helix Text Editor
+- **IDE**: Helix Text Editor **Plugins**: ripgrep, fzf, csharl-l
 - **Shell**: PowerShell
 - **Terminal**: Windows Terminal
 - **Browser**: QuteBrowser
@@ -16,6 +16,7 @@ The root directory (`CppProjects`) contains the following key files:
 - `global.json`: Specifies the .NET SDK version for all projects.
 - `CppProjects.sln`: Solution file grouping all projects in the repository.
 - `CMakeLists.txt`: Configuration file for CMake builds (if applicable).
+- `helper.txt`: Contains commands to start a new project in current folder.
 
 ### Subdirectories
 
@@ -24,7 +25,7 @@ The root directory (`CppProjects`) contains the following key files:
 - **Projects**: Larger-scale projects, including individual .NET applications.
 
 
-## Random
+## Fun Fact
 
 - I will not be using any AI tools or assistants to generate any code throughout my whole course.
 - AI will only be used for syntax or fast searching.
