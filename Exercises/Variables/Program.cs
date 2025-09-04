@@ -149,13 +149,15 @@ class Exercises
                 sum += value2;
                 Console.WriteLine($"Sum is {sum}");
                 numbers++;
-                          }
+            }
             else
             {
                 Console.WriteLine("Not a valid integer, try again.");
             }
         }
-        Console.WriteLine($"Total sum: {sum} and you entered {numbers} numbers. The average is {sum / numbers}");
+        Console.WriteLine(
+            $"Total sum: {sum} and you entered {numbers} numbers. The average is {sum / numbers}"
+        );
         Console.WriteLine("Press any key to continue...");
         Console.ReadKey();
     }
@@ -175,34 +177,17 @@ class Exercises
             string? choice = Console.ReadLine();
             switch (choice)
             {
-                case "0":
-                    break;
-                case "1":
-                    Exercise1();
-                    break;
-                case "2":
-                    Exercise2();
-                    break;
-                case "3":
-                    Exercise3();
-                    break;
-                case "4":
-                    Exercise4();
-                    break;
-                case "5":
-                    Exercise5();
-                    break;
-                case "6":
-                    Exercise6();
-                    break;
-                case "7":
-                    Exercise7();
-                    break;
-                case "q":
-                    Console.WriteLine("Exiting program");
+                case "0": break;
+                case "1": Exercise1(); break;
+                case "2": Exercise2(); break;
+                case "3": Exercise3(); break;
+                case "4": Exercise4(); break;
+                case "5": Exercise5(); break;
+                case "6": Exercise6(); break;
+                case "7": Exercise7(); break;
+                case "q": Console.WriteLine("Exiting program");
                     return;
-                default:
-                    Console.WriteLine("Invalid choice, try again.");
+                default: Console.WriteLine("Invalid choice, try again.");
                     break;
             }
         }
