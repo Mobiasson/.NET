@@ -76,6 +76,25 @@
         }
     }
 
+    /* 7. Fylld box */
+    static void Exercise7()
+    {
+        Console.WriteLine("Enter a height");
+        string? heightInput = Console.ReadLine();
+        Console.WriteLine("Enter a width");
+        string? widthInput = Console.ReadLine();
+        int.TryParse(heightInput, out int heightValue);
+        int.TryParse(widthInput, out int widthValue);
+        for (int i = 1; i <= heightValue; i++)
+        {
+            for (int j = 2; j <= widthValue; j++)
+            {
+                Console.Write("X");
+            }
+            Console.WriteLine("X");
+        }
+    }
+
     static void Main(string[] args)
     {
         while (true)
@@ -87,6 +106,7 @@
             Console.WriteLine("4. Gångertabell");
             Console.WriteLine("5. Summa");
             Console.WriteLine("6. Riskorn på schackbräde");
+            Console.WriteLine("7. Fylld box");
             string? choice = Console.ReadLine();
             switch (choice)
             {
@@ -109,6 +129,9 @@
                     break;
                 case "6":
                     Exercise6();
+                    break;
+                case "7":
+                    Exercise7();
                     break;
                 case "q":
                     Console.WriteLine("Exiting program");
