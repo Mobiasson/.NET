@@ -34,6 +34,21 @@
         }
     }
 
+    /* 4. Gångertabell */
+    static void Exercise4() {
+    Console.WriteLine("Write a number 1-9 for multiplication-table");
+    string? input = Console.ReadLine();
+    while (!int.TryParse(input, out int value)){
+        Console.WriteLine("Not a number");
+        input = Console.ReadLine();
+    }
+        int.TryParse(input, out int value2);
+        for(int i = 1; i <= 10;i++) {
+        Console.WriteLine($"{value2} * {i} = {value2 * i}");
+        
+    } 
+}
+
     static void Main(string[] args)
     {
         while (true)
@@ -42,6 +57,7 @@
             Console.WriteLine("1. Skriv tal 20 till 30");
             Console.WriteLine("2. Jämna tal");
             Console.WriteLine("3. Var tredje 'Hej'");
+            Console.WriteLine("4. Gångertabell");
             string? choice = Console.ReadLine();
             switch (choice)
             {
@@ -55,6 +71,9 @@
                     break;
                 case "3":
                     Exercise3();
+                    break;
+                case "4":
+                    Exercise4();
                     break;
                 case "q":
                     Console.WriteLine("Exiting program");
