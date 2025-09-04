@@ -81,8 +81,12 @@ class Exercises
     // 6. Miniräknare
     static void Exercise6()
     {
-        Console.WriteLine("Write a number 1-9");
+        Console.WriteLine("Write a number 1-9");       
         string? firstInput = Console.ReadLine();
+        while (!int.TryParse(firstInput, out int y)) {
+            Console.WriteLine("Not a valid integer");
+            firstInput = Console.ReadLine();
+        }
         string? operatorInput;
         Console.WriteLine("Enter an operator: '+', '-', '*' or '/'");
         do
@@ -95,6 +99,10 @@ class Exercises
 
         Console.WriteLine($"{firstInput} {operatorInput} enter another number");
         string? secondInput = Console.ReadLine();
+            while (!int.TryParse(secondInput, out int z)) {
+            Console.WriteLine("Not a valid integer");
+            secondInput = Console.ReadLine();
+        }
         int num1 = int.TryParse(firstInput, out int result) ? result : 0;
         int num2 = int.TryParse(secondInput, out int result2) ? result2 : 0;
         if (operatorInput == "+")
@@ -139,35 +147,17 @@ class Exercises
             Console.WriteLine("5. Dubblera och halvera tal");
             Console.WriteLine("6. Miniräkmare");
             string? choice = Console.ReadLine();
-            string safeChoice = choice ?? "";
-            switch (safeChoice)
+            switch (choice)
             {
-                case "0":
-                    break;
-                case "1":
-                    Exercise1();
-                    break;
-                case "2":
-                    Exercise2();
-                    break;
-                case "3":
-                    Exercise3();
-                    break;
-                case "4":
-                    Exercise4();
-                    break;
-                case "5":
-                    Exercise5();
-                    break;
-                case "6":
-                    Exercise6();
-                    break;
-                case "q":
-                    Console.WriteLine("Exiting program");
-                    return;
-                default:
-                    Console.WriteLine("Invalid choice, try again.");
-                    break;
+                case "0": break;
+                case "1": Exercise1(); break;
+                case "2": Exercise2(); break;
+                case "3": Exercise3(); break;
+                case "4": Exercise4(); break;
+                case "5": Exercise5(); break;
+                case "6": Exercise6(); break;
+                case "q": Console.WriteLine("Exiting program"); return;
+                default: Console.WriteLine("Invalid choice, try again."); break;
             }
         }
     }
