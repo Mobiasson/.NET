@@ -81,9 +81,10 @@ class Exercises
     // 6. Miniräknare
     static void Exercise6()
     {
-        Console.WriteLine("Write a number 1-9");       
+        Console.WriteLine("Write a number 1-9");
         string? firstInput = Console.ReadLine();
-        while (!int.TryParse(firstInput, out int y)) {
+        while (!int.TryParse(firstInput, out int y))
+        {
             Console.WriteLine("Not a valid integer");
             firstInput = Console.ReadLine();
         }
@@ -99,7 +100,8 @@ class Exercises
 
         Console.WriteLine($"{firstInput} {operatorInput} enter another number");
         string? secondInput = Console.ReadLine();
-            while (!int.TryParse(secondInput, out int z)) {
+        while (!int.TryParse(secondInput, out int z))
+        {
             Console.WriteLine("Not a valid integer");
             secondInput = Console.ReadLine();
         }
@@ -129,10 +131,33 @@ class Exercises
             Console.WriteLine("Press any key to get back to the menu....");
             Console.ReadKey();
         }
-        else
+    }
+
+    static void Exercise7()
+    {
+        /* 7. Summa och medelvärde */
+        int sum = 0;
+        int numbers = 0;
+        while (true)
         {
-            Console.WriteLine("Not a valid operator");
+            Console.WriteLine("Enter a number or press 'q' to exit");
+            string? number = Console.ReadLine();
+            if (number == "q")
+                break;
+            if (int.TryParse(number, out int value2))
+            {
+                sum += value2;
+                Console.WriteLine($"Sum is {sum}");
+                numbers++;
+                          }
+            else
+            {
+                Console.WriteLine("Not a valid integer, try again.");
+            }
         }
+        Console.WriteLine($"Total sum: {sum} and you entered {numbers} numbers. The average is {sum / numbers}");
+        Console.WriteLine("Press any key to continue...");
+        Console.ReadKey();
     }
 
     static void Main(string[] args)
@@ -146,18 +171,39 @@ class Exercises
             Console.WriteLine("4. Jämför tal");
             Console.WriteLine("5. Dubblera och halvera tal");
             Console.WriteLine("6. Miniräkmare");
+            Console.WriteLine("7. Summa och medelvärde");
             string? choice = Console.ReadLine();
             switch (choice)
             {
-                case "0": break;
-                case "1": Exercise1(); break;
-                case "2": Exercise2(); break;
-                case "3": Exercise3(); break;
-                case "4": Exercise4(); break;
-                case "5": Exercise5(); break;
-                case "6": Exercise6(); break;
-                case "q": Console.WriteLine("Exiting program"); return;
-                default: Console.WriteLine("Invalid choice, try again."); break;
+                case "0":
+                    break;
+                case "1":
+                    Exercise1();
+                    break;
+                case "2":
+                    Exercise2();
+                    break;
+                case "3":
+                    Exercise3();
+                    break;
+                case "4":
+                    Exercise4();
+                    break;
+                case "5":
+                    Exercise5();
+                    break;
+                case "6":
+                    Exercise6();
+                    break;
+                case "7":
+                    Exercise7();
+                    break;
+                case "q":
+                    Console.WriteLine("Exiting program");
+                    return;
+                default:
+                    Console.WriteLine("Invalid choice, try again.");
+                    break;
             }
         }
     }
