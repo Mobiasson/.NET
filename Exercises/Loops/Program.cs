@@ -8,13 +8,23 @@
             Console.WriteLine(i);
         }
     }
+    
+    /* 2. Jämna tal */    
+    static void Exercise2()
+    {
+        for (int i = 0; i <= 30; i+=2) {
+            Console.WriteLine(i);
+        }
 
+        
+    }
     static void Main(string[] args)
     {
         while (true)
         {
             Console.WriteLine("Write 'q' to exit");
             Console.WriteLine("1. Skriv tal 20 till 30");
+            Console.WriteLine("2. Jämna tal");
             string? choice = Console.ReadLine();
             switch (choice)
             {
@@ -22,6 +32,9 @@
                     break;
                 case "1":
                     Exercise1();
+                    break;
+                case "2":
+                    Exercise2();
                     break;
                 case "q":
                     Console.WriteLine("Exiting program");
