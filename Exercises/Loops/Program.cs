@@ -35,19 +35,46 @@
     }
 
     /* 4. Gångertabell */
-    static void Exercise4() {
-    Console.WriteLine("Write a number 1-9 for multiplication-table");
-    string? input = Console.ReadLine();
-    while (!int.TryParse(input, out int value)){
-        Console.WriteLine("Not a number");
-        input = Console.ReadLine();
-    }
+    static void Exercise4()
+    {
+        Console.WriteLine("Write a number 1-9 for multiplication-table");
+        string? input = Console.ReadLine();
+        while (!int.TryParse(input, out int value))
+        {
+            Console.WriteLine("Not a number");
+            input = Console.ReadLine();
+        }
         int.TryParse(input, out int value2);
-        for(int i = 1; i <= 10;i++) {
-        Console.WriteLine($"{value2} * {i} = {value2 * i}");
-        
-    } 
-}
+        for (int i = 1; i <= 10; i++)
+        {
+            Console.WriteLine($"{value2} * {i} = {value2 * i}");
+        }
+    }
+
+    /* 5. Summa */
+    static void Exercise5()
+    {
+        int sum = 0;
+        for (int i = 0; i <= 1000; i++)
+        {
+            sum += i;
+        }
+        Console.WriteLine($"Sum of 1 to 1000 is {sum}");
+    }
+
+    /* 6. Riskorn på schackbräde */
+    static void Exercise6()
+    {
+        double rice = 1;
+        for (int i = 1; i <= 64; i++)
+        {
+            for (int j = 1; j <= 5; j++)
+            {
+                rice = Math.Pow(2, i - 1);
+            }
+            Console.WriteLine($"Square {i}: {rice}");
+        }
+    }
 
     static void Main(string[] args)
     {
@@ -58,6 +85,8 @@
             Console.WriteLine("2. Jämna tal");
             Console.WriteLine("3. Var tredje 'Hej'");
             Console.WriteLine("4. Gångertabell");
+            Console.WriteLine("5. Summa");
+            Console.WriteLine("6. Riskorn på schackbräde");
             string? choice = Console.ReadLine();
             switch (choice)
             {
@@ -74,6 +103,12 @@
                     break;
                 case "4":
                     Exercise4();
+                    break;
+                case "5":
+                    Exercise5();
+                    break;
+                case "6":
+                    Exercise6();
                     break;
                 case "q":
                     Console.WriteLine("Exiting program");
