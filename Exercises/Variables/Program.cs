@@ -185,9 +185,11 @@ class Exercises
                 case "5": Exercise5(); break;
                 case "6": Exercise6(); break;
                 case "7": Exercise7(); break;
-                case "q": Console.WriteLine("Exiting program");
+                case "q":
+                    Console.WriteLine("Exiting program");
                     return;
-                default: Console.WriteLine("Invalid choice, try again.");
+                default:
+                    Console.WriteLine("Invalid choice, try again.");
                     break;
             }
         }
