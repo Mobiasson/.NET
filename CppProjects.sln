@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercises", "Exercises", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Variables", "Exercises\Variables\Variables.csproj", "{173333E4-7645-4238-ADA8-6C4BF8537CDE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loops", "Exercises\Loops\Loops.csproj", "{D2CDCBDB-6A38-475C-9B53-864ABB137509}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,11 +31,24 @@ Global
 		{173333E4-7645-4238-ADA8-6C4BF8537CDE}.Release|x64.Build.0 = Release|Any CPU
 		{173333E4-7645-4238-ADA8-6C4BF8537CDE}.Release|x86.ActiveCfg = Release|Any CPU
 		{173333E4-7645-4238-ADA8-6C4BF8537CDE}.Release|x86.Build.0 = Release|Any CPU
+		{D2CDCBDB-6A38-475C-9B53-864ABB137509}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2CDCBDB-6A38-475C-9B53-864ABB137509}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2CDCBDB-6A38-475C-9B53-864ABB137509}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D2CDCBDB-6A38-475C-9B53-864ABB137509}.Debug|x64.Build.0 = Debug|Any CPU
+		{D2CDCBDB-6A38-475C-9B53-864ABB137509}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D2CDCBDB-6A38-475C-9B53-864ABB137509}.Debug|x86.Build.0 = Debug|Any CPU
+		{D2CDCBDB-6A38-475C-9B53-864ABB137509}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2CDCBDB-6A38-475C-9B53-864ABB137509}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2CDCBDB-6A38-475C-9B53-864ABB137509}.Release|x64.ActiveCfg = Release|Any CPU
+		{D2CDCBDB-6A38-475C-9B53-864ABB137509}.Release|x64.Build.0 = Release|Any CPU
+		{D2CDCBDB-6A38-475C-9B53-864ABB137509}.Release|x86.ActiveCfg = Release|Any CPU
+		{D2CDCBDB-6A38-475C-9B53-864ABB137509}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{173333E4-7645-4238-ADA8-6C4BF8537CDE} = {72EF5EB1-B308-CD20-4E1B-89C2486FD9E1}
+		{D2CDCBDB-6A38-475C-9B53-864ABB137509} = {72EF5EB1-B308-CD20-4E1B-89C2486FD9E1}
 	EndGlobalSection
 EndGlobal

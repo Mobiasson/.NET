@@ -1,2 +1,35 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿class Loops
+{
+    /* 1. Skriv talen 20 till 30 */
+    static void Exercise1()
+    {
+        for (int i = 20; i <= 30; i++)
+        {
+            Console.WriteLine(i);
+        }
+    }
+
+    static void Main(string[] args)
+    {
+        while (true)
+        {
+            Console.WriteLine("Write 'q' to exit");
+            Console.WriteLine("1. Skriv tal 20 till 30");
+            string? choice = Console.ReadLine();
+            switch (choice)
+            {
+                case "0":
+                    break;
+                case "1":
+                    Exercise1();
+                    break;
+                case "q":
+                    Console.WriteLine("Exiting program");
+                    return;
+                default:
+                    Console.WriteLine("Invalid choice, try again!");
+                    break;
+            }
+        }
+    }
+}
