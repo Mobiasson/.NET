@@ -84,11 +84,7 @@
 		int.TryParse(widthInput, out int widthValue);
 		for(int i = 1; i <= heightValue; i++) {
 			for(int j = 2; j <= widthValue; j++) {
-				if(j % 2 == 0) {
-					Console.Write("X");
-				} else {
-					Console.Write("O");
-				}
+				Console.Write(j % 2 == 0 ? "X" : "O");
 			}
 			Console.WriteLine("X");
 		}
@@ -112,6 +108,30 @@
 			Console.WriteLine();
 		}
 	}
+	/* 10. Ihålig box */
+	static void Exercise10() {
+		Console.WriteLine("Enter a height");
+		string? heightInput = Console.ReadLine();
+		Console.WriteLine("Enter a width");
+		string? widthInput = Console.ReadLine();
+		int.TryParse(heightInput, out int heightValue);
+		int.TryParse(widthInput, out int widthValue);
+		for(int i = 1; i <= heightValue; i++) {
+			for(int j = 2; j <= widthValue; j++) {
+				Console.Write("X"); /* Bredd */
+			}
+			Console.WriteLine("X"); /* Höjd*/
+		}
+	}
+	/*11. Sifferpyramid*/
+	static void Exercise11() {
+		for(int i = 1; i <= 9;i++) {
+			for(int j = 1; j <= i;j++) {
+				Console.Write(j);
+			}
+			Console.WriteLine();
+		}
+	}
 
 	static void Main(string[] args) {
 		while(true) {
@@ -125,6 +145,8 @@
 			Console.WriteLine("7. Fylld box");
 			Console.WriteLine("8. Randig box");
 			Console.WriteLine("9. Rutig box");
+			Console.WriteLine("10. Ihålig box");
+			Console.WriteLine("11. Sifferpyramid");
 			string? choice = Console.ReadLine();
 			switch(choice) {
 				case "0":
@@ -155,6 +177,12 @@
 					break;
 				case "9":
 					Exercise9();
+					break;
+				case "10":
+					Exercise10();
+					break;
+				case "11":
+					Exercise11();
 					break;
 				case "q":
 					Console.WriteLine("Exiting program");
