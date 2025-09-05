@@ -147,17 +147,20 @@
 	/*13. Primtal*/
 	static void Exercise13() {
 		List<int> primalList = new List<int>();
-		for(int i = 2; i <= 10000; i++) {
-			int primeNumber = 0;
-			for(int j = 1; j <= i; j++) if(i % j == 0) primeNumber++;
-			if(primeNumber == 2){
+		for(int i = 2; i <= 100; i++) {
+			int divideCounter = 0;
+			for(int j = 1; j <= i; j++) if(i % j == 0) divideCounter++;
+			if(divideCounter == 2) {
 				Console.WriteLine($"{i} is prime");
 				primalList.Add(i);
-			}
-			else Console.WriteLine($"{i} is not prime");
-			if(primeNumber == 20) break;
+			} else Console.WriteLine($"{i} is not prime");
+			if(primalList.Count == 20) break;
 		}
 		Console.WriteLine($"That's 20 primnumbers {string.Join(" ", primalList)}");
+	}
+
+	/*14. Spel - Gissa tl*/
+	static void Exercise14() {
 	}
 
 	static void Main(string[] args) {
@@ -176,6 +179,7 @@
 			Console.WriteLine("11. Sifferpyramid");
 			Console.WriteLine("12. Nio sifferpyramider");
 			Console.WriteLine("13. Primtal");
+			Console.WriteLine("14. Spel - Gissa tal");
 			string? choice = Console.ReadLine();
 			switch(choice) {
 				case "0":
@@ -218,6 +222,9 @@
 					break;
 				case "13":
 					Exercise13();
+					break;
+				case "14":
+					Exercise14();
 					break;
 				case "q":
 					Console.WriteLine("Exiting program");
