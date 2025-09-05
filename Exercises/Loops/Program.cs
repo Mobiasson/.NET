@@ -125,12 +125,39 @@
 	}
 	/*11. Sifferpyramid*/
 	static void Exercise11() {
-		for(int i = 1; i <= 9;i++) {
-			for(int j = 1; j <= i;j++) {
+		for(int i = 1; i <= 9; i++) {
+			for(int j = 1; j <= i; j++) {
 				Console.Write(j);
 			}
 			Console.WriteLine();
 		}
+	}
+	/*12. Nio sifferpyramider*/
+	static void Exercise12() {
+		for(int i = 1; i <= 9; i++) {
+			for(int j = 1; j <= i; j++) {
+				for(int y = 1; y <= j; y++) {
+					Console.Write(y);
+				}
+				Console.WriteLine();
+			}
+			Console.WriteLine();
+		}
+	}
+	/*13. Primtal*/
+	static void Exercise13() {
+		List<int> primalList = new List<int>();
+		for(int i = 2; i <= 10000; i++) {
+			int primeNumber = 0;
+			for(int j = 1; j <= i; j++) if(i % j == 0) primeNumber++;
+			if(primeNumber == 2){
+				Console.WriteLine($"{i} is prime");
+				primalList.Add(i);
+			}
+			else Console.WriteLine($"{i} is not prime");
+			if(primeNumber == 20) break;
+		}
+		Console.WriteLine($"That's 20 primnumbers {string.Join(" ", primalList)}");
 	}
 
 	static void Main(string[] args) {
@@ -147,6 +174,8 @@
 			Console.WriteLine("9. Rutig box");
 			Console.WriteLine("10. Ihålig box");
 			Console.WriteLine("11. Sifferpyramid");
+			Console.WriteLine("12. Nio sifferpyramider");
+			Console.WriteLine("13. Primtal");
 			string? choice = Console.ReadLine();
 			switch(choice) {
 				case "0":
@@ -183,6 +212,12 @@
 					break;
 				case "11":
 					Exercise11();
+					break;
+				case "12":
+					Exercise12();
+					break;
+				case "13":
+					Exercise13();
 					break;
 				case "q":
 					Console.WriteLine("Exiting program");
