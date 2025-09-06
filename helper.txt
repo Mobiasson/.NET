@@ -15,4 +15,4 @@ dotnet sln MyNewProject.sln add MyNewProject.csproj
 dotnet sln ..\..\CppProjects.sln add MyNewProject.csproj
 
 -- Add project to CppProjects.sln for LSP
-dotnet sln CppProjects.sln add [new project]
+dotnet sln CppProjects.sln add [Add the .csproj in newly created project folder]

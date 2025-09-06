@@ -163,6 +163,7 @@
 	static void Exercise14() {
 		Random rd = new Random();
 		int randomNum = rd.Next(100);
+		Console.WriteLine(randomNum); /*for testing*/
 		Console.WriteLine("Guess what the secret number is :)");
 		while(true) {
 			if(!int.TryParse(Console.ReadLine(), out int guess)) {
@@ -184,6 +185,27 @@
 			}
 		}
 	}
+
+	/*14c. Spel - Gissa tl*/
+	static void Exercise14ai() {
+		Random rd = new Random();
+		int randomNum = rd.Next(100);
+		while(true) {
+			int compGuess = rd.Next(100);
+			int guesses = 0; /*add later*/
+			Console.WriteLine($"Random number is: {randomNum}"); /*testing*/
+			Console.WriteLine($"Computers guess is: {compGuess}"); /*testing*/
+			if(compGuess == randomNum) {
+				Console.WriteLine("Now I got it!");
+				break;
+			}
+			if(randomNum == compGuess && compGuess > 10) {
+				Console.WriteLine("Guess is too high, in the range on 10");
+			}
+		}
+	}
+
+
 
 	static void Main(string[] args) {
 		while(true) {
@@ -246,7 +268,19 @@
 					Exercise13();
 					break;
 				case "14":
-					Exercise14();
+					Console.WriteLine("Do you want to play yourself? Y/N");
+					Console.WriteLine("If you want the computer to play, write 'computer'");
+					string? option = Console.ReadLine().ToLower();
+					switch(option) {
+						case "y":
+							Exercise14();
+							break;
+						case "n":
+							break;
+						case "computer":
+							Exercise14ai();
+							break;
+					}
 					break;
 				case "q":
 					Console.WriteLine("Exiting program");
