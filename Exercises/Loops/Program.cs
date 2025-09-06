@@ -161,6 +161,28 @@
 
 	/*14. Spel - Gissa tl*/
 	static void Exercise14() {
+		Random rd = new Random();
+		int randomNum = rd.Next(100);
+		Console.WriteLine("Guess what the secret number is :)");
+		while(true) {
+			if(!int.TryParse(Console.ReadLine(), out int guess)) {
+				Console.WriteLine("Can't be negative! Try again!");
+			}
+			if(guess != randomNum) {
+				string hint = guess == randomNum ? "Correct! You guessed the number!" :
+										  guess > randomNum + 10 ? "Your guess is too high!" :
+										  guess > randomNum + 5 ? "Still too high, but closer!" :
+										  guess < randomNum - 10 ? "Your guess is too low!" :
+										  guess < randomNum - 5 ? "Still too low, bug closer!" :
+										  "Now you're really close!";
+				Console.WriteLine(hint);
+			} else {
+				Console.WriteLine("Correct!");
+				Console.WriteLine("Press any key to get back to the menu...");
+				Console.ReadKey();
+				break;
+			}
+		}
 	}
 
 	static void Main(string[] args) {
