@@ -1,4 +1,6 @@
 ﻿#pragma warning disable CS8602
+#pragma warning disable CS8601
+#pragma warning disable CS8600
 class Indexing {
 	static void Exercise1() {
 		Console.WriteLine("Write any word");
@@ -36,7 +38,7 @@ class Indexing {
 			string? input = Console.ReadLine();
 			NullStringChecker(input);
 			string[] vokaler = { "a", "e", "i", "o", "u", "y", "å", "ä", "ö" };
-			String newString = input;
+			String? newString = input;
 			for(int i = 0; i < vokaler.Length; i++) {
 				newString = newString.Replace(vokaler[i], "*");
 			}
@@ -47,12 +49,41 @@ class Indexing {
 		}
 	}
 
+	static void Exercise5() {
+		Console.WriteLine("Write any word.");
+		string? input = Console.ReadLine();
+		string? revString = input != null ? new string(input.Reverse().ToArray()) : "";
+		if(input == revString) Console.WriteLine("Word is a palindrome");
+		else Console.WriteLine("Word is not a palindrome");
+		Console.WriteLine("Press any key to get back to menu");
+		Console.ReadKey();
+	}
+
+	static void Exercise6() {
+		Console.WriteLine("What do you want do calculate? (Ex. 15 * 5)");
+		char[] symbols = { '+', '*', '/', '-' };
+		string? input = Console.ReadLine();
+		string[] words = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+	}
+
+	static void Exercise7() {
+		Console.WriteLine("Skriv in 7 ord");
+		string[] strArray = new string[7];
+		for(int i = 0; i < strArray.Length; i++) strArray[i] = Console.ReadLine();
+		Console.WriteLine("Array is full!");
+		Array.Reverse(strArray);
+		Console.WriteLine(string.Join(",", strArray));
+	}
+
 	static void Main(string[] args) {
 		while(true) {
 			Console.WriteLine("1. En bokstav på varje rad");
 			Console.WriteLine("2. Siffror till text");
 			Console.WriteLine("3. Baklänges");
 			Console.WriteLine("4. Dölj vokaler");
+			Console.WriteLine("5. Palindrom");
+			Console.WriteLine("6. Miniräknare");
+			Console.WriteLine("7. Omvänd ordning");
 			string? choice = Console.ReadLine();
 			switch(choice) {
 				case "0":
@@ -68,6 +99,15 @@ class Indexing {
 					break;
 				case "4":
 					Exercise4();
+					break;
+				case "5":
+					Exercise5();
+					break;
+				case "6":
+					Exercise6();
+					break;
+				case "7":
+					Exercise7();
 					break;
 				case "q":
 					Console.WriteLine("Exiting program");
