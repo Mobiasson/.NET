@@ -1,6 +1,7 @@
 ﻿#pragma warning disable CS8602
 #pragma warning disable CS8601
 #pragma warning disable CS8600
+
 class Indexing {
 	static void Exercise1() {
 		Console.WriteLine("Write any word");
@@ -75,6 +76,20 @@ class Indexing {
 		Console.WriteLine(string.Join(",", strArray));
 	}
 
+
+static void Exercise8()
+{
+    List<string> wordList = new List<string>();
+    Console.WriteLine("Write a random word");
+    while (true)
+    {
+        string word = Console.ReadLine() ?? "";
+        wordList.Add(word);
+        if (wordList.Count < 10) Console.WriteLine($"Not at 10 words yet ({wordList.Count} word)");
+        else Console.WriteLine($"10 words ago was {wordList[wordList.Count - 10]}");
+    }
+}
+
 	static void Main(string[] args) {
 		while(true) {
 			Console.WriteLine("1. En bokstav på varje rad");
@@ -84,6 +99,7 @@ class Indexing {
 			Console.WriteLine("5. Palindrom");
 			Console.WriteLine("6. Miniräknare");
 			Console.WriteLine("7. Omvänd ordning");
+			Console.WriteLine("8. Fördröjd utskrift");
 			string? choice = Console.ReadLine();
 			switch(choice) {
 				case "0":
@@ -108,6 +124,9 @@ class Indexing {
 					break;
 				case "7":
 					Exercise7();
+					break;
+				case "8":
+					Exercise8();
 					break;
 				case "q":
 					Console.WriteLine("Exiting program");
