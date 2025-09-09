@@ -77,18 +77,23 @@ class Indexing {
 	}
 
 
-static void Exercise8()
-{
-    List<string> wordList = new List<string>();
-    Console.WriteLine("Write a random word");
-    while (true)
-    {
-        string word = Console.ReadLine() ?? "";
-        wordList.Add(word);
-        if (wordList.Count < 10) Console.WriteLine($"Not at 10 words yet ({wordList.Count} word)");
-        else Console.WriteLine($"10 words ago was {wordList[wordList.Count - 10]}");
-    }
-}
+	static void Exercise8() {
+		List<string> wordList = new List<string>();
+		Console.WriteLine("Write a random word");
+		while(true) {
+			string word = Console.ReadLine() ?? "";
+			wordList.Add(word);
+			if(wordList.Count < 10) Console.WriteLine($"Not at 10 words yet ({wordList.Count} word)");
+			else Console.WriteLine($"10 words ago was {wordList[wordList.Count - 10]}");
+		}
+	}
+
+	static void Exercise9() {
+		string text = "Hello World";
+		for(int i = 1; i <= text.Length; i++) {
+			Console.WriteLine(text.Substring(0, i));
+		}
+	}
 
 	static void Main(string[] args) {
 		while(true) {
@@ -100,6 +105,7 @@ static void Exercise8()
 			Console.WriteLine("6. Miniräknare");
 			Console.WriteLine("7. Omvänd ordning");
 			Console.WriteLine("8. Fördröjd utskrift");
+			Console.WriteLine("9. Bokstavspyramid");
 			string? choice = Console.ReadLine();
 			switch(choice) {
 				case "0":
@@ -127,6 +133,9 @@ static void Exercise8()
 					break;
 				case "8":
 					Exercise8();
+					break;
+				case "9":
+					Exercise9();
 					break;
 				case "q":
 					Console.WriteLine("Exiting program");
