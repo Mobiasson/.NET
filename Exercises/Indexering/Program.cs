@@ -83,7 +83,7 @@ class Indexing {
 		while(true) {
 			string word = Console.ReadLine() ?? "";
 			wordList.Add(word);
-			if(wordList.Count < 10) Console.WriteLine($"Not at 10 words yet ({wordList.Count} word)");
+			if(wordList.Count < 10) Console.WriteLine($"Not at 10 words yet ({wordList.Count})");
 			else Console.WriteLine($"10 words ago was {wordList[wordList.Count - 10]}");
 		}
 	}
@@ -93,6 +93,20 @@ class Indexing {
 		for(int i = 1; i <= text.Length; i++) {
 			Console.WriteLine(text.Substring(0, i));
 		}
+	}
+
+	static void Exercise10() {
+		Console.WriteLine("Write anything");
+		string input = Console.ReadLine();
+		Console.WriteLine("Write any letter that is in your sentence");
+		string letter = Console.ReadLine();
+		char char1 = letter[0];
+		foreach(char c in input) {
+			Console.ForegroundColor = char1 == c ? ConsoleColor.Red : ConsoleColor.Gray;
+			Console.Write(c);
+		}
+		Console.ResetColor();
+		Console.WriteLine();
 	}
 
 	static void Main(string[] args) {
@@ -106,6 +120,7 @@ class Indexing {
 			Console.WriteLine("7. Omvänd ordning");
 			Console.WriteLine("8. Fördröjd utskrift");
 			Console.WriteLine("9. Bokstavspyramid");
+			Console.WriteLine("10. Färgade bokstäver");
 			string? choice = Console.ReadLine();
 			switch(choice) {
 				case "0":
@@ -136,6 +151,9 @@ class Indexing {
 					break;
 				case "9":
 					Exercise9();
+					break;
+				case "10":
+					Exercise10();
 					break;
 				case "q":
 					Console.WriteLine("Exiting program");

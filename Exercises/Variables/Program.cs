@@ -118,19 +118,14 @@ class Exercises {
 		while(true) {
 			Console.WriteLine("Enter a number or press 'q' to exit");
 			string? number = Console.ReadLine();
-			if(number == "q")
-				break;
+			if(number == "q") break;
 			if(int.TryParse(number, out int value2)) {
 				sum += value2;
 				Console.WriteLine($"Sum is {sum}");
 				numbers++;
-			} else {
-				Console.WriteLine("Not a valid integer, try again.");
-			}
+			} else Console.WriteLine("Not a valid integer, try again.");
 		}
-		Console.WriteLine(
-			$"Total sum: {sum} and you entered {numbers} numbers. The average is {sum / numbers}"
-		);
+		Console.WriteLine($"Total sum: {sum} and you entered {numbers} numbers. The average is {sum / numbers}");
 		Console.WriteLine("Press any key to continue...");
 		Console.ReadKey();
 	}
