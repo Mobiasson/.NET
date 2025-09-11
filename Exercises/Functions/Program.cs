@@ -47,12 +47,6 @@
 
 	}
 
-	static void TestProg() {
-		int i = 15123;
-		char c = Convert.ToChar(i);
-
-	}
-
 
 	static void Main(string[] args) {
 		while(true) {
@@ -64,7 +58,6 @@
 			Console.WriteLine("6. Egen version av String.Join()");
 			Console.WriteLine("7. Beräkna medelvärde av int-array");
 			Console.WriteLine("8. Siffror till text");
-			Console.WriteLine("9. Testing");
 			string? choice = Console.ReadLine();
 			switch(choice) {
 				case "0":
@@ -92,9 +85,6 @@
 					break;
 				case "8":
 					Console.WriteLine(Exercise8(12345));
-					break;
-				case "9":
-					TestProg();
 					break;
 				case "q":
 					Console.WriteLine("Exiting program");
