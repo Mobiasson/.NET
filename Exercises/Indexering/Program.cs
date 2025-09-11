@@ -109,6 +109,21 @@ class Indexing {
 		Console.WriteLine();
 	}
 
+	static void Exercise11() {
+		Console.WriteLine("Write anything");
+		string sentence = Console.ReadLine();
+		Console.WriteLine("Write a starting index");
+		if(!int.TryParse(Console.ReadLine(), out int startIndex)) Console.WriteLine("This is not an integer");
+		Console.WriteLine("Write a stop index");
+		if(!int.TryParse(Console.ReadLine(), out int stopIndex)) Console.WriteLine("Not an integer");
+		for (int i = 0; i < sentence.Length; i++) {
+			Console.ForegroundColor = (i >= startIndex && i <= stopIndex) ? ConsoleColor.Red : ConsoleColor.White;
+			Console.Write(sentence[i]);
+		}
+		Console.ResetColor();
+		Console.WriteLine();
+	}
+
 	static void Main(string[] args) {
 		while(true) {
 			Console.WriteLine("1. En bokstav på varje rad");
@@ -121,6 +136,7 @@ class Indexing {
 			Console.WriteLine("8. Fördröjd utskrift");
 			Console.WriteLine("9. Bokstavspyramid");
 			Console.WriteLine("10. Färgade bokstäver");
+			Console.WriteLine("11. Start & Stop");
 			string? choice = Console.ReadLine();
 			switch(choice) {
 				case "0":
@@ -154,6 +170,9 @@ class Indexing {
 					break;
 				case "10":
 					Exercise10();
+					break;
+				case "11":
+					Exercise11();
 					break;
 				case "q":
 					Console.WriteLine("Exiting program");
