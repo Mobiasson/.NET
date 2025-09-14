@@ -3,8 +3,7 @@
 		string randomString = randomStringGen(30);
 		ulong sum = 0;
 		for(int i = 0; i < randomString.Length; i++) {
-			char currentIndex = randomString[i];
-			int nextIndex = randomString.IndexOf(currentIndex, i + 1);
+			int nextIndex = randomString.IndexOf(randomString[i], i + 1);
 			if(nextIndex != -1 && letterChecker(randomString, i, nextIndex)) {
 				string digitString = string.Concat(randomString.Substring(i, nextIndex - i + 1).Where(char.IsDigit)); sum += ulong.Parse(digitString);
 				for(int j = 0; j < randomString.Length; j++) {
