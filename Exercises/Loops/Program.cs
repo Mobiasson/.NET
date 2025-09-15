@@ -19,7 +19,8 @@
 		string? input = Console.ReadLine();
 		while(!int.TryParse(input, out int value)) {
 			Console.WriteLine("Not a number");
-			input = Console.ReadLine(); }
+			input = Console.ReadLine();
+		}
 		int.TryParse(input, out int value2);
 		for(int i = 1; i <= 10; i++) Console.WriteLine($"{value2} * {i} = {value2 * i}");
 	}
@@ -74,7 +75,7 @@
 		int.TryParse(widthInput, out int widthValue);
 		for(int i = 1; i <= heightValue; i++) {
 			for(int j = 1; j <= widthValue; j++) {
-			if(i % 2 == 1) Console.Write(j % 2 == 1 ? "X" : "O");
+				if(i % 2 == 1) Console.Write(j % 2 == 1 ? "X" : "O");
 				else Console.Write(j % 2 == 1 ? "O" : "X");
 			}
 			Console.WriteLine();
@@ -126,7 +127,6 @@
 		Console.WriteLine($"That's 20 primnumbers {string.Join(" ", primalList)}");
 	}
 
-	/*14. Spel - Gissa tl*/
 	static void Exercise14() {
 		Random rd = new Random();
 		int randomNum = rd.Next(100);
@@ -170,8 +170,7 @@
 			} else if(nextGuess < randomNum - 5) {
 				nextGuess += 5;
 				Console.WriteLine($"Guess is 5 or more too low {nextGuess}");
-			} else
-			  {
+			} else {
 				nextGuess = rd.Next(randomNum - 5, randomNum + 6);
 				Console.WriteLine($"Next guess: {nextGuess}");
 			}
@@ -179,10 +178,35 @@
 		Console.WriteLine($"Correct! The number was {randomNum}");
 	}
 
+	static void Exercise15() {
+		Random rd = new Random();
+		int playerScore = 0;
+		int compScore = 0;
+		string[] choices = { "rock", "scissors", "paper" };
+		while(true) {
+			Console.WriteLine("Choose your weapon! rock, paper or scissors");
+			string? choice = Console.ReadLine().ToLower();
+			string compChoice = choices[rd.Next(choices.Length)];
+			Console.WriteLine($"Player chose {choice}. Computer chose {compChoice}");
+			string result = choice == "rock" && compChoice == "scissors" ? "You win!" :
+					choice == "rock" && compChoice == "rock" ? "Let's go again!" :
+					choice == "rock" && compChoice == "paper" ? "You lose!" :
+					choice == "scissors" && compChoice == "paper" ? "You win!" :
+					choice == "scissors" && compChoice == "scissors" ? "Let's go again!" :
+					choice == "scissors" && compChoice == "rock" ? "You lose!" :
+					choice == "paper" && compChoice == "rock" ? "You win!" :
+					choice == "paper" && compChoice == "paper" ? "Let's go again!" :
+					choice == "paper" && compChoice == "scissors" ? "You lose" : "";
+					if(result == "You win!") playerScore ++;
+					else if(result == "You lose!") compScore++;
+			Console.WriteLine(result);
+			Console.WriteLine($"The score is: {playerScore} to the player. And {compScore} to the computer");
+			Console.ReadKey();
+		}
+	}
 
 	static void Main(string[] args) {
 		while(true) {
-
 			Console.WriteLine("Write 'q' to exit");
 			Console.WriteLine("1. Skriv tal 20 till 30");
 			Console.WriteLine("2. Jämna tal");
@@ -198,6 +222,7 @@
 			Console.WriteLine("12. Nio sifferpyramider");
 			Console.WriteLine("13. Primtal");
 			Console.WriteLine("14. Spel - Gissa tal");
+			Console.WriteLine("15. Sten,sax, påse");
 			string? choice = Console.ReadLine();
 			switch(choice) {
 				case "0":
@@ -255,6 +280,9 @@
 							Exercise14ai();
 							break;
 					}
+					break;
+				case "15":
+					Exercise15();
 					break;
 				case "q":
 					Console.WriteLine("Exiting program");
