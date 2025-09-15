@@ -163,7 +163,6 @@
 	static void Exercise14() {
 		Random rd = new Random();
 		int randomNum = rd.Next(100);
-		Console.WriteLine(randomNum); /*for testing*/
 		Console.WriteLine("Guess what the secret number is :)");
 		while(true) {
 			if(!int.TryParse(Console.ReadLine(), out int guess)) {
@@ -186,29 +185,37 @@
 		}
 	}
 
-	/*14c. Spel - Gissa tl*/
 	static void Exercise14ai() {
 		Random rd = new Random();
 		int randomNum = rd.Next(100);
-		while(true) {
-			int compGuess = rd.Next(100);
-			int guesses = 0; /*add later*/
-			Console.WriteLine($"Random number is: {randomNum}"); /*testing*/
-			Console.WriteLine($"Computers guess is: {compGuess}"); /*testing*/
-			if(compGuess == randomNum) {
-				Console.WriteLine("Now I got it!");
-				break;
-			}
-			if(randomNum == compGuess && compGuess > 10) {
-				Console.WriteLine("Guess is too high, in the range on 10");
+		int nextGuess = rd.Next(100);
+		Console.WriteLine($"Computer guessed {nextGuess}");
+		while(nextGuess != randomNum) {
+			if(nextGuess > randomNum + 10) {
+				nextGuess -= 10;
+				Console.WriteLine($"Guess is 10 or more too high {nextGuess}");
+			} else if(nextGuess > randomNum + 5) {
+				nextGuess -= 5;
+				Console.WriteLine($"Guess is 5 or more too high {nextGuess}");
+			} else if(nextGuess < randomNum - 10) {
+				nextGuess += 10;
+				Console.WriteLine($"Guess is 10 or more too low {nextGuess}");
+			} else if(nextGuess < randomNum - 5) {
+				nextGuess += 5;
+				Console.WriteLine($"Guess is 5 or more too low {nextGuess}");
+			} else
+			  {
+				nextGuess = rd.Next(randomNum - 5, randomNum + 6);
+				Console.WriteLine($"Next guess: {nextGuess}");
 			}
 		}
+		Console.WriteLine($"Correct! The number was {randomNum}");
 	}
-
 
 
 	static void Main(string[] args) {
 		while(true) {
+
 			Console.WriteLine("Write 'q' to exit");
 			Console.WriteLine("1. Skriv tal 20 till 30");
 			Console.WriteLine("2. Jämna tal");
@@ -269,7 +276,7 @@
 					break;
 				case "14":
 					Console.WriteLine("Do you want to play yourself? Y/N");
-					Console.WriteLine("If you want the computer to play, write 'computer'");
+					Console.WriteLine("If you want the computer to play, write 'comp'");
 					string? option = Console.ReadLine().ToLower();
 					switch(option) {
 						case "y":
@@ -277,7 +284,7 @@
 							break;
 						case "n":
 							break;
-						case "computer":
+						case "comp":
 							Exercise14ai();
 							break;
 					}
