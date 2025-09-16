@@ -20,8 +20,7 @@ The root directory (`CppProjects`) contains the following key files:
 
 - `global.json`: Specifies the .NET SDK version for all projects.
 - `CppProjects.sln`: Solution file grouping all projects in the repository.
-- `CMakeLists.txt`: Configuration file for CMake builds (if applicable).
-- `helper.txt`: Contains commands to start a new project in current folder.
+- `helper.txt`: Contains commands to start a new project.
 - `.editorconfig`: Configuration file for dotnet-formatter.
 
 ### Subdirectories
