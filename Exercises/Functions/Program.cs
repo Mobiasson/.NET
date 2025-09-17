@@ -41,11 +41,21 @@
 		return average;
 	}
 
-	static string[] Exercise8(int number) {
-		string[] numbArray = {"noll", "ett", "två", "tre", "fyra", "fem", "sex", "sju", "åtta", "nio"};
+	static string[] Exercise8(int number)
+{
+    string[] numbArray = { "noll", "ett", "två", "tre", "fyra", "fem", "sex", "sju", "åtta", "nio" };
+    string[] result = new string[number];
+    Random rd = new Random();
 
+    for (int i = 0; i < number; i++)
+    {
+        int digit = rd.Next(10);
+        result[i] = numbArray[digit];
 
-	}
+    }
+
+    return result;
+}
 
 
 	static void Main(string[] args) {
