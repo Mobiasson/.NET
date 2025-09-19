@@ -1,6 +1,6 @@
 ﻿class Labb {
 	static void Main(string[] args) {
-		string randomString = randomStringGen(30);
+		string randomString = randomStringGen(50);
 		ulong sum = 0;
 		for(int i = 0; i < randomString.Length; i++) {
 			int nextIndex = randomString.IndexOf(randomString[i], i + 1);
@@ -21,7 +21,9 @@
 		char[] charArr = new char[stringLength];
 		string digits = "0123456789";
 		string letters = "abcdefghijklmnopqrstuvwxyz";
-		for(int i = 0; i < charArr.Length; i++) if(rdn.NextDouble() < 0.9) charArr[i] = digits[rdn.Next(digits.Length)];
+		string symbols = "' '!#¤%&/()=?^*";
+		for(int i = 0; i < charArr.Length; i++) if(rdn.NextDouble() < 0.8) charArr[i] = digits[rdn.Next(digits.Length)];
+		else if(rdn.NextDouble() < 0.1) charArr[i] = symbols[rdn.Next(symbols.Length)];
 			else charArr[i] = letters[rdn.Next(letters.Length)];
 		string longString = new String(charArr);
 		return longString;
@@ -30,7 +32,7 @@
 
 	static bool letterChecker(string input, int startIndex, int endIndex) {
 		for(int i = startIndex; i <= endIndex; i++) {
-			if(char.IsLetter(input[i])) return false;
+			if(!char.IsDigit(input[i])) return false;
 		}
 		return true;
 	}

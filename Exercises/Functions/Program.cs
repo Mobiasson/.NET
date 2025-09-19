@@ -25,7 +25,7 @@
 		return newString;
 	}
 
- 	static string Exercise6(string sign, params string[] arrayOfStrings) {
+	static string Exercise6(string sign, params string[] arrayOfStrings) {
 		string wordArray = arrayOfStrings[0];
 		for(int i = 1; i < arrayOfStrings.Length; i++) wordArray += sign + arrayOfStrings[i];
 		return wordArray;
@@ -34,29 +34,42 @@
 	static double Exercise7(params int[] intArray) {
 		double average;
 		int sum = 0;
-		for(int i = 0;i < intArray.Length; i++) {
+		for(int i = 0; i < intArray.Length; i++) {
 			sum += intArray[i];
 		}
 		average = sum / intArray.Length;
 		return average;
 	}
 
-	static string[] Exercise8(int number)
-{
-    string[] numbArray = { "noll", "ett", "två", "tre", "fyra", "fem", "sex", "sju", "åtta", "nio" };
-    string[] result = new string[number];
-    Random rd = new Random();
+	static string[] Exercise8(int number) {
+		string[] digitWords = { "noll", "ett", "två", "tre", "fyra", "fem", "sex", "sju", "åtta", "nio" };
+		string numStr = number.ToString();
+		string[] result = new string[numStr.Length];
+		for(int i = 0; i < numStr.Length; i++) {
+			int digit = int.Parse(numStr[i].ToString());
+			result[i] = digitWords[digit];
+		}
+		return result;
+	}
 
-    for (int i = 0; i < number; i++)
-    {
-        int digit = rd.Next(10);
-        result[i] = numbArray[digit];
+	static string Exercise9(ushort input) {
+	string numbToString = input.ToString();
+		for(int i = 0; i < numbToString.Length; i++) {
+		Console.Write(numbToString[i]);
+		}
+		return numbToString;
+	}
 
-    }
+	static int[] Exercise10(string text, char c) {
+		int[] stringArray = [text.Length];
+		for(int i = 0; i < text.Length;i++) {
+			if(text.ToLower().Contains(c)) {
+			stringArray[i] = i;
+			}
+		}
+		return stringArray;
 
-    return result;
-}
-
+		}
 
 	static void Main(string[] args) {
 		while(true) {
@@ -68,6 +81,8 @@
 			Console.WriteLine("6. Egen version av String.Join()");
 			Console.WriteLine("7. Beräkna medelvärde av int-array");
 			Console.WriteLine("8. Siffror till text");
+			Console.WriteLine("9. Heltal till text");
+			Console.WriteLine("10. Hitta index för alla förekomster av ett givet tecken");
 			string? choice = Console.ReadLine();
 			switch(choice) {
 				case "0":
@@ -88,13 +103,19 @@
 					Console.WriteLine(Exercise5("Mikael"));
 					break;
 				case "6":
-					Console.WriteLine(Exercise6("->","Sverige", "Norge", "Finland"));
+					Console.WriteLine(Exercise6("->", "Sverige", "Norge", "Finland"));
 					break;
 				case "7":
-					Console.WriteLine(Exercise7(5,8,9,5,2,5));
+					Console.WriteLine(Exercise7(5, 8, 9, 5, 2, 5));
 					break;
 				case "8":
-					Console.WriteLine(Exercise8(12345));
+					Console.WriteLine(string.Join(", ", Exercise8(12345)));
+					break;
+				case "9":
+					Exercise9(12345);
+					break;
+				case "10":
+					Exercise10("Hello world!", 'o');
 					break;
 				case "q":
 					Console.WriteLine("Exiting program");
