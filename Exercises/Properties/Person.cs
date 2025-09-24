@@ -1,4 +1,6 @@
 #pragma warning disable CS8618
+#pragma warning disable CS1717
+#pragma warning disable CS8601
 
 namespace Exercises.Person {
 class Person {
@@ -51,5 +53,23 @@ namespace Exercises.Car {
 		public double Price { get => price; set => price = value; }
 		public string Color { get => color; set => color = value; }
 
+		public Car() {
+
+		}
+
+		public Car(string model, double price, string color) {
+			this.model = model;
+			this.price = price;
+			this.color = color;
+		}
+
+		public void HalfPrice() {
+			price = price / 2;
+		}
+
+
+		public override string? ToString() {
+			return $"The model is {model}, Price is {price} and the color is {color}";
+		}
 	}
 }

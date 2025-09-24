@@ -2,6 +2,7 @@
 
 using Exercises.Person;
 using Exercises.StepCounter;
+using Exercises.Car;
 
 class Program {
 	static void Main(string[]args) {
@@ -11,11 +12,16 @@ class Program {
 	/* Console.WriteLine($"{person1.FirstName} {person1.LastName}"); */
 	Console.WriteLine($"{person1.FullName}");
 
-	StepCounter sc = new StepCounter();
+	/* StepCounter sc = new StepCounter();
 	for(int i = 0; i < 1000; i++) {
 			sc.Step();
-	}
-	sc.Reset();
+	} */
+
+	Car car = new Car("BMW", 1500000, "Black");
+	car.HalfPrice();
+	Console.WriteLine(car);
+
+
 
 	}
 }
