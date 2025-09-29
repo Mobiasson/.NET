@@ -6,6 +6,8 @@ using Exercises.StepCounter;
 using Exercises.Car;
 using Exercises.Water;
 using Exercises.Colors;
+using Exercises.Temperature;
+using Exercises.Car2;
 
 class Program {
 	static void Main(string[] args) {
@@ -33,10 +35,19 @@ class Program {
 		waterGlas.FillGlas(); */
 
 
-		Colors colors = new Colors();
-		colors.blue = 100 - colors.red;
-		Console.WriteLine($"Color blue is: {colors.blue}");
-		Console.WriteLine($"Color red is: {colors.red}");
+		// Colors colors = new Colors();
+		// colors.blue = 100 - colors.red;
+		// Console.WriteLine($"Color blue is: {colors.blue}");
+
+
+		Temperature t = new() { Farenheit = 40 };
+
+		Console.WriteLine($"Kelvin:   {t.Kelvin,10:f2}");
+		Console.WriteLine($"Celcius:  {t.Celcius,10:f2}");
+		Console.WriteLine($"Farenheit:{t.Farenheit,10:f2}");
+
+		Car2 myNewCar = new Car2(ConsoleColor.DarkGreen, 20);
+		Console.WriteLine();
 
 
 

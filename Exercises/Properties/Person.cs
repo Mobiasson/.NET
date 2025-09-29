@@ -107,13 +107,51 @@ namespace Exercises.Water {
 
 namespace Exercises.Colors {
 	class Colors {
-	static Random rnd = new Random();
-	public double blue = Math.Round(rnd.NextDouble() * 100, 2);
-	public double red = Math.Round(rnd.NextDouble() * 100, 2);
-
-
-
-		}
+		static Random rnd = new Random();
+		public double blue = Math.Round(rnd.NextDouble() * 100, 2);
+		public double red = Math.Round(rnd.NextDouble() * 100, 2);
 	}
+}
+
+namespace Exercises.Temperature {
+	class Temperature {
+		private double _celcius;
+
+		public double Celcius { get => _celcius; set { if(value < 0) throw new ArgumentOutOfRangeException("COLD!"); _celcius = value; } }
+		public double Kelvin {
+			get => _celcius + 273.15; set {
+				if(value < 0) throw new ArgumentOutOfRangeException("ITS VERY COLD!");
+				_celcius = (value - 273.15);
+			}
+		}
+		public double Farenheit {
+			get => _celcius * 9 / 5 + 32;
+			set {
+				if(value < 0) throw new ArgumentOutOfRangeException("VERY COLD!");
+				_celcius = (value - 32) * 5.0 / 9.0;
+			}
+		}
+
+
+	}
+}
+
+namespace Exercises.Car2 {
+	class Car2 {
+		Random rnd = new Random();
+		private ConsoleColor color;
+		private double length;
+
+		public ConsoleColor Color { get => color; set => color = value; }
+		public double Length { get => length; set => length = rnd.NextDouble() * 5.0; }
+
+		public Car2(ConsoleColor color, double length) {
+			this.Color = color;
+			this.Length = length;
+		}
+
+	}
+}
+
 
 
