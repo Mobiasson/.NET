@@ -40,16 +40,17 @@ class Program {
 		// Console.WriteLine($"Color blue is: {colors.blue}");
 
 
-		Temperature t = new() { Farenheit = 40 };
+		// Temperature t = new() { Farenheit = 40 };
 
-		Console.WriteLine($"Kelvin:   {t.Kelvin,10:f2}");
-		Console.WriteLine($"Celcius:  {t.Celcius,10:f2}");
-		Console.WriteLine($"Farenheit:{t.Farenheit,10:f2}");
+		// Console.WriteLine($"Kelvin:   {t.Kelvin,10:f2}");
+		// Console.WriteLine($"Celcius:  {t.Celcius,10:f2}");
+		// Console.WriteLine($"Farenheit:{t.Farenheit,10:f2}");
 
-		Car2 myNewCar = new Car2(ConsoleColor.DarkGreen, 20);
-		Console.WriteLine();
-
-
+		Car2 myNewCar = new Car2(Car2.RandomColor(), 5);
+		Car2[] myCars = new Car2[1000];
+		for(int i = 0;i < myCars.Length;i++) myCars[i] = new Car2(Car2.RandomColor(), 5);
+		double result = Car2.SumOfCarLength(myCars);
+		Console.WriteLine($"The sumLength of all the cars that are green are {result:f2}");
 
 	}
 }

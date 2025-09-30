@@ -1,6 +1,7 @@
 #pragma warning disable CS8618
 #pragma warning disable CS1717
 #pragma warning disable CS8601
+#pragma warning disable CS8605
 
 namespace Exercises.Person {
 	class Person {
@@ -138,7 +139,7 @@ namespace Exercises.Temperature {
 
 namespace Exercises.Car2 {
 	class Car2 {
-		Random rnd = new Random();
+		public static Random rnd = new Random();
 		private ConsoleColor color;
 		private double length;
 
@@ -150,6 +151,18 @@ namespace Exercises.Car2 {
 			this.Length = length;
 		}
 
+		public static double SumOfCarLength(params object[] cars) {
+		double sumOfLength = 0;
+		foreach(Car2 car in cars) {
+		if(car.Color == ConsoleColor.Green) sumOfLength += car.Length;
+		}
+			return sumOfLength;
+		}
+
+		public static ConsoleColor RandomColor() {
+			Array values = Enum.GetValues(typeof(ConsoleColor));
+			return (ConsoleColor)values.GetValue(rnd.Next(values.Length));
+		}
 	}
 }
 
