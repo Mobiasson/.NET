@@ -1,11 +1,6 @@
-﻿enum Brand {
-	BMW, Volvo, Opel, Tesla, Audi
-}
-
-enum Color {
-	Red, Black, Violet, Green ,Blue
-}
-
-class Vehicle {
-
+﻿class Program {
+	static void Main(string[] args) {
+		Vehicle myVehicle = new Vehicle(Brand.Toyota, Color.White);
+		Console.WriteLine(myVehicle);
+	}
 }
