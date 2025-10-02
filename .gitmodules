@@ -1,0 +1,6 @@
+[submodule "Labb2"]
+	path = Labb2
+	url = https://github.com/Mobiasson/Labb2.git
+[submodule "Assignments/Labb2"]
+	path = Assignments/Labb2
+	url = https://github.com/Mobiasson/Labb2.git
