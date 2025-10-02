@@ -18,7 +18,7 @@ class Vehicle {
 		Dimensions = new Size {
 			_length = 1.5 + rnd.NextDouble() * 2,
 			_width = 1 + rnd.NextDouble() * 2,
-			_height =  0.5 + rnd.NextDouble() * 2
+			_height = 0.5 + rnd.NextDouble() * 2
 		};
 	}
 
@@ -61,3 +61,18 @@ struct Size {
 		_height = height;
 	}
 }
+
+public abstract class Shape {
+	public abstract double Area { get; }
+	public abstract double Circumference { get; }
+}
+
+public class Circle : Shape {
+	public override double Area => throw new NotImplementedException();
+	public override double Circumference => throw new NotImplementedException();
+
+
+
+}
+
+
