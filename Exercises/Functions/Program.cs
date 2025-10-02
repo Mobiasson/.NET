@@ -53,23 +53,79 @@
 	}
 
 	static string Exercise9(ushort input) {
-	string numbToString = input.ToString();
+		string numbToString = input.ToString();
 		for(int i = 0; i < numbToString.Length; i++) {
-		Console.Write(numbToString[i]);
+			Console.Write(numbToString[i]);
 		}
 		return numbToString;
 	}
 
 	static int[] Exercise10(string text, char c) {
 		int[] stringArray = [text.Length];
-		for(int i = 0; i < text.Length;i++) {
+		for(int i = 0; i < text.Length; i++) {
 			if(text.ToLower().Contains(c)) {
-			stringArray[i] = i;
+				stringArray[i] = i;
 			}
 		}
 		return stringArray;
+	}
 
+	static void Exercise11() {
+		Random rnd = new Random();
+		int diceThrow = rnd.Next(1, 6);
+		Console.WriteLine(diceThrow);
+	}
+
+	static void Exercise12(int width, int height) {
+		for(int i = 0; i < height; i++) {
+			for(int j = 0; j < width; j++) {
+				if(i == 0 || i == height - 1 || j == 0 || j == width - 1) Console.Write("#");
+				else Console.Write("-");
+			}
+			Console.WriteLine();
 		}
+	}
+
+	static void Exercise13(int width, int height) {
+		int x = width / 2;
+		int y = height / 2;
+		while(true) {
+			if(Console.KeyAvailable) {
+				ConsoleKeyInfo key = Console.ReadKey(true);
+				if(key.Key == ConsoleKey.UpArrow && y > 1) y--;
+				if(key.Key == ConsoleKey.DownArrow && y < height - 2) y++;
+				if(key.Key == ConsoleKey.LeftArrow && x > 1) x--;
+				if(key.Key == ConsoleKey.RightArrow && x < width - 2) x++;
+			}
+			Console.Clear();
+			for(int i = 0; i < height; i++) {
+				for(int j = 0; j < width; j++) {
+					if(i == y && x == j) Console.Write("@");
+					else if(i == 0 || i == height - 1 || j == 0 || j == width - 1) Console.Write("#");
+					else Console.Write("-");
+				}
+				Console.WriteLine();
+			}
+			System.Threading.Thread.Sleep(100);
+		}
+	}
+
+	private static void MoveRight() {
+
+		throw new NotImplementedException();
+	}
+
+	private static void MoveLeft() {
+		throw new NotImplementedException();
+	}
+
+	private static void MoveDown() {
+		throw new NotImplementedException();
+	}
+
+	private static void MoveUp() {
+		throw new NotImplementedException();
+	}
 
 	static void Main(string[] args) {
 		while(true) {
@@ -83,6 +139,9 @@
 			Console.WriteLine("8. Siffror till text");
 			Console.WriteLine("9. Heltal till text");
 			Console.WriteLine("10. Hitta index för alla förekomster av ett givet tecken");
+			Console.WriteLine("11. Kasta tärning");
+			Console.WriteLine("12. Rita en box");
+			Console.WriteLine("13. Flytta runt med piltangenterna");
 			string? choice = Console.ReadLine();
 			switch(choice) {
 				case "0":
@@ -116,6 +175,15 @@
 					break;
 				case "10":
 					Exercise10("Hello world!", 'o');
+					break;
+				case "11":
+					Exercise11();
+					break;
+				case "12":
+					Exercise12(12, 8);
+					break;
+				case "13":
+					Exercise13(12, 8);
 					break;
 				case "q":
 					Console.WriteLine("Exiting program");
