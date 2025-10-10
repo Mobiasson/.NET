@@ -31,6 +31,8 @@
 	Console.WriteLine(result);
 	}
 
+
+
     static void Main(string[] args) {
 	DelegateParameter((firstName , lastName) => $"{firstName} {lastName}");
 	SumWithLambda(10, 5);

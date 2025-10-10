@@ -14,3 +14,10 @@ dotnet new sln
 
 -- Add project to CppProjects.sln for LSP
 dotnet sln CppProjects.sln add [Add the .csproj in newly created project folder]
+
+-- To add folders for dotnet format to work. Add to .csproj file.
+-- EXAMPLE
+	<ItemGroup>
+    	<Compile Include="Program.cs" />
+    	<Compile Include="Game\*.cs" /> 
+	</ItemGroup>
