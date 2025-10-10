@@ -110,23 +110,6 @@
 		}
 	}
 
-	private static void MoveRight() {
-
-		throw new NotImplementedException();
-	}
-
-	private static void MoveLeft() {
-		throw new NotImplementedException();
-	}
-
-	private static void MoveDown() {
-		throw new NotImplementedException();
-	}
-
-	private static void MoveUp() {
-		throw new NotImplementedException();
-	}
-
 	static void Main(string[] args) {
 		while(true) {
 			Console.WriteLine("1. Slå ihop för- och efternamn - skriv ut");
