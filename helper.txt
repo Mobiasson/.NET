@@ -1,4 +1,4 @@
-- Generate new projects and adds to CppProjects.sln
+ Generate new projects and adds to CppProjects.sln
 
 Set-Location -Path C:\users\mikae\CppProjects\Projects
 New-Item -ItemType Directory -Name MyNewProject
