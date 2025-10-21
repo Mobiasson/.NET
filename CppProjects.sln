@@ -21,10 +21,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Properties", "Exercises\Pro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inheritance", "Exercises\Inheritance\Inheritance.csproj", "{3520AF1A-6A64-4E75-A2DB-50DA66C184A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labb2", "Assignments\Labb2\Labb2.csproj", "{2D4C15FE-78AE-4D46-8256-AB042A276E72}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Labb2", "Labb2", "{D57AF23E-E326-16CF-01FC-344995C87D43}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game", "Assignments\Labb2\Game\Game.csproj", "{18E44370-3337-45E6-8209-64FE62442996}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delegate", "Exercises\Delegate\Delegate.csproj", "{8EB3C7DE-F0C6-45D3-A47B-86CA3D228F11}"
