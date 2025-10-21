@@ -4,7 +4,7 @@
 		var people = new[] {
 			new { FirstName = "Mikael", LastName = " Ros Tobiasson", Age = 33, Weight = 70, Height = 165},
 			new { FirstName = "Signe", LastName = " Blix Herrlander", Age = 33, Weight = 60, Height = 165},
-			new { FirstName = "Sven", LastName = " Svensson", Age = 11, Weight = 38, Height = 122},
+			new { FirstName = "Sven", LastName = " Frö", Age = 11, Weight = 38, Height = 122},
 			new { FirstName = "Amalia", LastName = " Andersson", Age = 16, Weight = 46, Height = 231},
 			new { FirstName = "Greta", LastName = " Gustavsson", Age = 77, Weight = 88, Height = 130},
 			new { FirstName = "Daniel", LastName = " Gry", Age = 39, Weight = 123, Height = 199},
@@ -64,6 +64,13 @@
 		var UsernameFilter = (from p in people select new {Category = p.Age < 18 ? "Child" : "Adult", Username = p.FirstName + p.Age}).ToList();
 		UsernameFilter.ForEach(p => Console.WriteLine($"{p.Username} is of {p.Category} "));
 		// 10. Sortera efter längd
-
+		var OrderByLength = people.OrderBy(p => p.Height).ToList();
+		OrderByLength.ForEach(p => Console.WriteLine($"{p.FirstName} is {p.Height}cm long"));
+		// 11. Sortera äldst till yngst
+		var OrderByAge = people.OrderByDescending(p => p.Age).ToList();
+		OrderByAge.ForEach(p => Console.WriteLine($"{p.FirstName} is {p.Age} years old"));
+		// 12. Sortering i första och andra hand
+		var OrderByLastname = people.OrderBy(p => p.LastName).ThenByDescending(p => p.FirstName).ToList();
+		OrderByLastname.ForEach(p => Console.WriteLine($"{p.FirstName}{p.LastName}"));
 	}
 }
