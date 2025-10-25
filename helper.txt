@@ -21,3 +21,6 @@ dotnet sln CppProjects.sln add [Add the .csproj in newly created project folder]
     	<Compile Include="Program.cs" />
     	<Compile Include="Game\*.cs" /> 
 	</ItemGroup>
+
+-- Generate WPF project in existing
+-- dotnet new wpf -o <name of project>
