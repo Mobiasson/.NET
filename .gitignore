@@ -9,7 +9,6 @@ Projects/*/*.csproj
 Projects/*/*.sln
 Assignments/*/*.csproj
 Assignments/*/*.sln
-Exercises/*/*.csproj
 
 ## WPF
 .vs/
