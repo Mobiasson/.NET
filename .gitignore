@@ -12,5 +12,5 @@ Assignments/*/*.sln
 Exercises/*/*.csproj
 
 ## WPF
-Exercises/WPF/.vs
+.vs/
 
