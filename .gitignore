@@ -10,7 +10,6 @@ Projects/*/*.sln
 Assignments/*/*.csproj
 Assignments/*/*.sln
 Exercises/*/*.csproj
-Exercises/*/*.sln
 
 ## WPF
 Exercises/WPF/.vs
