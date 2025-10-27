@@ -6,29 +6,36 @@
         xmlns:local="clr-namespace:WPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-	<Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+	<Grid ShowGridLines="True">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
 
-        <Button Grid.Row="0" Grid.Column="0" Content="X"/>
-        <Button Grid.Row="0" Grid.Column="1" Content="X"/>
-        <Button Grid.Row="0" Grid.Column="2" Content="X"/>
+		<StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
+			<Label Content="FirstName"/>
+			<TextBox Width="170" TextChanged="TextBox_TextChanged_1"/>
+		</StackPanel>
 
-        <Button Grid.Row="1" Grid.Column="0" Content="X"/>
-        <Button Grid.Row="1" Grid.Column="1" Content="X"/>
-        <Button Grid.Row="1" Grid.Column="2" Content="X"/>
+		<StackPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
+			<Label Content="LastName" />
+			<TextBox Width="170" TextChanged="TextBox_TextChanged_1"/>
+		</StackPanel>
 
-        <Button Grid.Row="2" Grid.Column="0" Content="X"/>
-        <Button Grid.Row="2" Grid.Column="1" Content="X"/>
-        <Button Grid.Row="2" Grid.Column="2" Content="X"/>
-    </Grid>
+		<StackPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
+			<Label Content="Email"/>
+			<TextBox  Width="170" TextChanged="TextBox_TextChanged_1"/>
+		</StackPanel>
+
+		<WrapPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+			<Button Content="Cancel" Width="50" Margin="5"/>
+			<Button Content="OK" Width="50" Margin="5"/>
+		</WrapPanel>
+	</Grid>
 </Window>
+		
