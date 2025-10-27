@@ -4,12 +4,16 @@ obj/
 ## bin/ directory is generated through dotnet new console
 bin/
 
-## .csproj and .sln
+## .csproj .sln .vs
 Projects/*/*.csproj
 Projects/*/*.sln
 Assignments/*/*.csproj
 Assignments/*/*.sln
+Exercises/WPF/.vs
+Exercises/WPF/.vs/*
+.vs
+
 
 ## WPF
-.vs/
+
 
