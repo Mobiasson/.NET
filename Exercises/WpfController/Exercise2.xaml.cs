@@ -27,5 +27,10 @@ namespace XAML {
             if(int.TryParse(counter.Content.ToString(), out int count))
                 counter.Content = (count - 1).ToString();
         }
+
+        private void slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e) {
+            if(int.TryParse(counter.Content.ToString(), out int count))
+                counter.Content = (count + 1).ToString();
+        }
     }
 }
