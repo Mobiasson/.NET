@@ -38,14 +38,16 @@
 			Margin="10"
 			Padding="5" />
 
-		<Slider x:Name="slider"
-				ValueChanged="slider_ValueChanged"
-        Maximum="9"
-        TickPlacement="BottomRight"
-        IsSnapToTickEnabled="True"
-        Width="200"
-        HorizontalAlignment="Center"
-        VerticalAlignment="Center"
-        Margin="10"/>
+		<Slider
+			x:Name="slider"
+			ValueChanged="Slider_ValueChanged"
+			Minimum="0"
+			Maximum="9"
+			TickPlacement="BottomRight"
+			IsSnapToTickEnabled="True"
+			Width="200"
+			HorizontalAlignment="Center"
+			VerticalAlignment="Center"
+			Margin="10" />
 	</StackPanel>
 </Window>
