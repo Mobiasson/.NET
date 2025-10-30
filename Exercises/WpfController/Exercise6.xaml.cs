@@ -19,6 +19,23 @@ namespace XAML {
             InitializeComponent();
             DataContext = new MainViewModel();
         }
+        private void add_button_Click(object sender, RoutedEventArgs e) {
+            var newStudent = new Student {
+                FirstName = "New",
+                LastName = null,
+                Email = null
+            };
+            ((MainViewModel)DataContext).Students.Add(newStudent);
+            ((MainViewModel)DataContext).Students.Add(newStudent);
+        }
+        private void remove_button_Click(object sender, RoutedEventArgs e) {
+            if(student_list.SelectedItem is Student student) {
+                ((MainViewModel)DataContext).Students.Remove(student);
+            }
+        }
+        private void student_list_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+            remove_button.IsEnabled = student_list.SelectedItem != null;
+        }
 
     }
 }
