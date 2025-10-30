@@ -26,7 +26,6 @@ namespace XAML {
                 Email = null
             };
             ((MainViewModel)DataContext).Students.Add(newStudent);
-            ((MainViewModel)DataContext).Students.Add(newStudent);
         }
         private void remove_button_Click(object sender, RoutedEventArgs e) {
             if(student_list.SelectedItem is Student student) {
@@ -35,6 +34,11 @@ namespace XAML {
         }
         private void student_list_SelectionChanged(object sender, SelectionChangedEventArgs e) {
             remove_button.IsEnabled = student_list.SelectedItem != null;
+            menuItem_remove.IsEnabled = student_list.SelectedItem != null;
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e) {
+            Application.Current.Shutdown();
         }
 
     }
