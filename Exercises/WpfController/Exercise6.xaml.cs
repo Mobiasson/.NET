@@ -35,6 +35,7 @@ namespace XAML {
         private void student_list_SelectionChanged(object sender, SelectionChangedEventArgs e) {
             remove_button.IsEnabled = student_list.SelectedItem != null;
             menuItem_remove.IsEnabled = student_list.SelectedItem != null;
+            context_remove.IsEnabled = student_list.SelectedItem != null;
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e) {

@@ -26,7 +26,14 @@
 				<Label Grid.Row="0" Grid.Column="0" Content="Students:" HorizontalAlignment="Left" />
 				<Button x:Name="add_button" Click="add_button_Click" Grid.Row="0" Grid.Column="0" Content="Add" HorizontalAlignment="Right" Margin="5" />
 				<Button x:Name="remove_button" IsEnabled="False" Click="remove_button_Click" Grid.Row="0" Grid.Column="1" Content="Remove" HorizontalAlignment="Right" Margin="0 5 0 5" />
-				<ListBox x:Name="student_list" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Height="330" BorderBrush="Black" BorderThickness="1" ItemsSource="{Binding Students}" SelectedItem="{Binding SelectedStudent, Mode=TwoWay}" DisplayMemberPath="FullName" SelectionChanged="student_list_SelectionChanged" />
+				<ListBox x:Name="student_list" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Height="330" BorderBrush="Black" BorderThickness="1" ItemsSource="{Binding Students}" SelectedItem="{Binding SelectedStudent, Mode=TwoWay}" DisplayMemberPath="FullName" SelectionChanged="student_list_SelectionChanged">
+					<ListBox.ContextMenu>
+						<ContextMenu>
+							<MenuItem x:Name="context_add" Click="add_button_Click" Header="Add Student" />
+							<MenuItem x:Name="context_remove" IsEnabled="False" Click="remove_button_Click" Header="Remove Student" />
+						</ContextMenu>
+					</ListBox.ContextMenu>
+				</ListBox>
 			</Grid>
 			<StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" DataContext="{Binding SelectedStudent}">
 				<Label Content="FirstName" />
