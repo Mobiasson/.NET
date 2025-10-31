@@ -1,3 +1,7 @@
 [submodule "Assignments/Labb2"]
 	path = Assignments/Labb2
 	url = https://github.com/Mobiasson/Labb2.git
+
+[submodule "Assignments/Labb3"]
+	path = Assignments/Labb3
+	url = https://github.com/Mobiasson/Labb3_Quizzly.git
